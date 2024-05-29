@@ -6,11 +6,11 @@ The Multi-Modal Disease Prediction System utilizes a hybrid approach to accurate
 
 ## Features
 
-**Hybrid Approach:** Combines SAM, YOLO, ML, and DL models for accurate disease prediction.
-**User-Friendly Interface:** Provides a seamless user experience for interacting with the prediction system.
-**Personalized Predictions:** Tailors disease predictions based on user-specific data and preferences.
-**Advanced Technologies:** Utilizes state-of-the-art techniques to ensure high accuracy and reliability.
-**Medical Chatbot:** Allows users to engage with a chatbot for medical queries and support.
+**Hybrid Approach:** Combines SAM, YOLO, ML, and DL models for accurate disease prediction.\n
+**User-Friendly Interface:** Provides a seamless user experience for interacting with the prediction system.\n
+**Personalized Predictions:** Tailors disease predictions based on user-specific data and preferences.\n
+**Advanced Technologies:** Utilizes state-of-the-art techniques to ensure high accuracy and reliability.\n
+**Medical Chatbot:** Allows users to engage with a chatbot for medical queries and support.\n
 
 ## Objectives
 Our goal is to develop a sophisticated disease prediction system that leverages the strengths of SAM, YOLO, ML, and DL models. By providing accurate predictions and personalized recommendations, we aim to improve healthcare outcomes and contribute to the advancement of medical technology.
