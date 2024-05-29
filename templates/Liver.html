@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liver Disease Prediction</title>
+    <style>  
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');  
+      *{  
+        margin: 0;  
+        padding: 0;  
+        box-sizing: border-box;  
+        font-family: 'Montserrat', sans-serif;  
+        color:black;  
+      }  
+      body{  
+        background: url("https://static.vecteezy.com/system/resources/previews/000/697/995/non_2x/human-liver-in-abstract-blue-poly-design-vector.jpg") no-repeat top center;  
+        padding: 0 10px;  
+        background-size: cover;  
+      }  
+      .wrapper{  
+        max-width: 500px;  
+        width: 100%;  
+        background: rgba(34, 126, 197, 0.7);  
+        margin: 20px auto;  
+        padding: 30px;  
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, 1.25);  
+      }  
+      .wrapper .title{  
+        font-size: 24px;  
+        font-weight: 700;  
+        margin-bottom: 25px;  
+        color: #fec107;  
+        text-transform: uppercase;  
+        text-align: center;  
+      }  
+      .wrapper .form{  
+        width: 100%;  
+      }  
+      .wrapper .form .input_field{  
+        margin-bottom: 15px;  
+        display: flex;  
+        align-items: center;  
+      }  
+      .wrapper .form .input_field label{  
+        width:80px;  
+        font: bold;  
+        color: wheat;  
+        margin-right: 10px;  
+        font-size: 14px;  
+      }  
+      .wrapper .form .input_field input{  
+        width: 100px;  
+      }  
+      .wrapper .form .input_field .textarea{  
+        resize: none;  
+        height: 250px;  
+        width: 500px;  
+      }  
+      </style>  
+     
+    
+
+</head>
+<body>
+    
+    <form method="post" action="/make_prediction2">
+        <!-- Add input fields for features -->
+        <div class="wrapper">  
+            <div class="title">  
+              <h1 style="color: white;">Liver Disease Prediction</h1>  
+            </div>  
+            <div class="form">  
+              <div class="input_field">  
+                <textarea style="color: white; background: rgba(0, 0, 0, 0.3);" class="textarea" readonly>  
+        It's a clean, easy to understand set of data. However, the meaning of some of the column headers are not obvious. Here's what they mean,  
+        
+        This data set contains 10 variables that are age, gender, total Bilirubin, direct Bilirubin, total proteins, albumin, A/G ratio, SGPT, SGOT and Alkphos.
+
+        Attribute Information:
+        
+        Age : Age of the patient
+
+        Gender : Gender of the patient
+
+        TB : Total Bilirubin
+
+        DB : Direct Bilirubin
+
+        Alkphos Alkaline Phosphotase
+
+        Sgpt Alamine Aminotransferase
+
+        Sgot Aspartate Aminotransferase
+
+        TP : Total Protiens
+
+        ALB: Albumin
+        
+        A/G Ratio : Albumin and Globulin Ratio
+                  </textarea>  
+               </div>  
+              <div class="input_field">  
+                <label>Age</label>  
+                <input type="number" id="age" min="0" max="150" name="age" class="input_text">  
+                <br/>  <i style="font-size: 10px; color: white;">(Age: 1 - 90)</i>  
+              </div>  
+              <div class="input_field">  
+                <label>Gender</label>  
+                 <input type="number" min="0" max="1" name="sex" id="sex" class="input_text">  
+                 <br/>  <i style="font-size: 10px; color: white;">(Male: 1 & Female: 0)</i>  
+               </div>  
+               <div class="input_field">  
+                <label>Total Bilirubin</label>  
+                 <input type="number" name="Total" id="Total" min="0"  class="input_text">  
+                 <br/>  <i style="font-size: 10px; color: white;">(Enter Single Value From Range 0-80)</i>  
+               </div>  
+               <div class="input_field">  
+                <label>Direct Bilirubin</label>  
+                 <input name="Direct" id="Direct" type="number" min="0" step="1" class="input_text">  
+                 <br/>  <i style="font-size: 10px; color: white;">(Enter Single Value From Range 0-20)</i>  
+               </div>  
+               <div class="input_field">  
+                <label>Alkphos Alkaline Phosphotase</label>  
+                 <input name="Alkaline" id="Alkaline" type="number" min="0" step="1" class="input_text">  
+                 <br/>  <i style="font-size: 10px; color: white;">(Enter Non-Decimal Value)</i>  
+               </div>  
+               <div class="input_field">  
+                <label> Sgpt Alamine Aminotransferase</label>  
+                 <input type="number" min="0"  name="Alamine" id="Alamine" class="input_text">  
+                 <br/>  <i style="font-size: 10px; color: white;">(Enter Non-Decimal Value)</i>  
+               </div>  
+               <div class="input_field">  
+                <label>Sgot Aspartate Aminotransferase</label>  
+                 <input type="number" name="Aspartate" min="0"  id="Aspartate" class="input_text">  
+                 <br/>  <i style="font-size: 10px; color: white;">(Enter Non-Decimal Value)</i>  
+               </div>  
+               <div class="input_field">  
+                <label>Total Protiens</label>  
+                 <input name="Protiens" id="Protiens" type="number" min="0"  class="input_text">  
+                 <br/>  <i style="font-size: 10px; color: white;">(Enter Non-Decimal Value in range 0-10)</i>  
+               </div>  
+               <div class="input_field">  
+                <label>Albumin</label>  
+                 <input type="number" min="0" name="Albumin" id="Albumin" class="input_text">  
+                 <br/>  <i style="font-size: 10px; color: white;">(range 0-9)</i>  
+               </div>  
+               <div class="input_field">  
+                <label>A/G Ratio</label>  
+                 <input name="Ratio" id="Ratio" type="number" min="0" step="0.01" class="input_text">  
+                 <br/>  <i style="font-size: 10px; color: white;">(Enter any Value in range 0-3)</i>  
+               </div>
+               <div class="input_field">  
+                <input type="submit" style="color:black; background: skyblue;" id="submit" value="SUBMIT">  
+              </div>    
+              <div>  
+                <center>  
+                  <h2 style="color: white; margin-bottom:10px;">  
+                    {{prediction_text}}  
+                  </h2>  
+                </center>  
+              </div>  
+            </div>  
+          </div>  
+        </form>  
+        </body>  
+        </html>  
+
+
+
+
+
+
+
+
+

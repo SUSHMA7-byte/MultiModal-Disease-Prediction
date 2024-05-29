@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> obstructive pulmonary disease Prediction</title>
+    <style>  
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');  
+      *{  
+        margin: 0;  
+        padding: 0;  
+        box-sizing: border-box;  
+        font-family: 'Montserrat', sans-serif;  
+        color:black;  
+      }  
+      body{  
+        background: url("./static/copd.jpeg") no-repeat top center;  
+        padding: 0 10px;  
+        background-size: cover;  
+      }  
+      .wrapper{  
+        max-width: 500px;  
+        width: 100%;  
+        background: rgba(34, 126, 197, 0.7);  
+        margin: 20px auto;  
+        padding: 30px;  
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, 1.25);  
+      }  
+      .wrapper .title{  
+        font-size: 24px;  
+        font-weight: 700;  
+        margin-bottom: 25px;  
+        color: #fec107;  
+        text-transform: uppercase;  
+        text-align: center;  
+      }  
+      .wrapper .form{  
+        width: 100%;  
+      }  
+      .wrapper .form .input_field{  
+        margin-bottom: 15px;  
+        display: flex;  
+        align-items: center;  
+      }  
+      .wrapper .form .input_field label{  
+        width:80px;  
+        font: bold;  
+        color: wheat;  
+        margin-right: 10px;  
+        font-size: 14px;  
+      }  
+      .wrapper .form .input_field input{  
+        width: 100px;  
+      }  
+      .wrapper .form .input_field .textarea{  
+        resize: none;  
+        height: 250px;  
+        width: 500px;  
+      }  
+      </style>  
+     
+    
+
+</head>
+<body>
+    
+    <form method="post" action="/make_prediction6">
+        <!-- Add input fields for features -->
+        <div class="wrapper">  
+            <div class="title">  
+              <h1 style="color: white;">obstructive pulmonary  Prediction</h1>  
+            </div>  
+            <div class="form">  
+              <div class="input_field">  
+                <textarea style="color: white; background: rgba(0, 0, 0, 0.3);" class="textarea" readonly>  
+        It's a clean, easy to understand set of data. However, the meaning of some of the column headers are not obvious. Here's what they mean,  
+                  
+                  AGE
+
+                  Gender
+
+                  smoking
+
+                  Diabetes	
+
+                  muscular
+
+                  hypertension	
+
+                  MWT1Best	
+
+                  FEV1PRED	 
+                  
+                  CAT	
+                  
+                  HAD
+
+                  </textarea>  
+               </div>  
+              <div class="input_field">  
+                <label>AGE</label>  
+                <input type="number" id="age" min="0" max="150" name="age" class="input_text">  
+                <br/>  <i style="font-size: 10px; color: white;">(Age: 1 - 150)</i>  
+              </div>  
+              <div class="input_field">  
+                <label>Gender</label>  
+                 <input type="number"  name="Gender" id="sex" class="input_text">  
+                 <br/>  <i style="font-size: 10px; color: white;">(Male: 1 & Female: 0)</i>  
+               </div>  
+               <div class="input_field">  
+                <label>smoking</label>  
+                 <input type="number" name="smoking" id="smoking" min="0"  class="input_text">  
+                 <br/>  <i style="font-size: 10px; color: white;">(Yes-2; No-1)</i>  
+               </div>  
+               <div class="input_field">  
+                <label>  hypertension </label>  
+                 <input name=" hypertension " id="hypertension" type="number" min="0" step="1" class="input_text">  
+                 <br/>  <i style="font-size: 10px; color: white;">(Yes-1; No-0)</i>  
+               </div>  
+               <div class="input_field">  
+                <label>Diabetes</label>  
+                 <input name="Diabetes" id="Diabetes" type="number" min="0" step="1" class="input_text">  
+                 <br/>  <i style="font-size: 10px; color: white;">(Yes-1; No-0)</i>  
+               </div>  
+               <div class="input_field">  
+                <label>muscular</label>  
+                 <input type="number" min="0"  name="muscular" id="muscular" class="input_text">  
+                 <br/>  <i style="font-size: 10px; color: white;">(Yes-1; No-0)</i>  
+               </div>  
+               <div class="input_field">  
+                <label>MWT1Best</label>  
+                 <input type="number" name="MWT1Best" min="0"  id="MWT1Best" class="input_text">  
+                 <br/>  <i style="font-size: 10px; color: white;">(Enter non-decimal value)</i>  
+               </div>  
+               <div class="input_field">  
+                <label>FEV1PRED</label>  
+                 <input name="FEV1PRED" id="FEV1PRED" type="number" min="0" step="1" class="input_text">  
+                 <br/>  <i style="font-size: 10px; color: white;">(Enter decimal value)</i>  
+               </div>  
+               <div class="input_field">  
+                <label>CAD</label>  
+                 <input type="number" min="0"  name="CAD" id="CAD" class="input_text">  
+                 <br/>  <i style="font-size: 10px; color: white;">(Enter non-decimal value)</i>  
+               </div>  
+               <div class="input_field">  
+                <label>HAD</label>  
+                 <input name="HAD	" id="HAD" type="number" min="0" step="0.01" class="input_text">  
+                 <br/>  <i style="font-size: 10px; color: white;">(Enter non-decimal value)</i>  
+               </div>  
+
+               <div class="input_field">  
+                <input type="submit" style="color:black; background: skyblue;" id="submit" value="SUBMIT">  
+              </div>  
+              <div>  
+                <center>  
+                  <h2 style="color: white; margin-bottom:10px;">  
+                    {{prediction_text}}  
+                  </h2>  
+                </center>  
+              </div>  
+            </div>  
+          </div>  
+        </form>  
+        </body>  
+        </html>  
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Diseases</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        figure {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        img {
+            width: 200px;  /* Set the desired width for the images */
+        }
+    </style>
+</head>
+<body>
+    <h1>List of Brain Diseases</h1>
+
+    <figure>
+        <a href="{{ url_for('predict', disease='alzheimers') }}">
+            <img src="{{ url_for('static', filename='brain.jpeg') }}" alt="Alzheimer's Disease">
+            <figcaption>Alzheimer's Disease</figcaption>
+        </a>
+    </figure>
+
+    <figure>
+        <a href="{{ url_for('predict', disease='parkinsons') }}">
+            <img src="{{ url_for('static', filename='brain.jpeg') }}" alt="Parkinson's Disease">
+            <figcaption>Parkinson's Disease</figcaption>
+        </a>
+    </figure>
+
+    <figure>
+        <a href="{{ url_for('predict', disease='ms') }}">
+            <img src="{{ url_for('static', filename='brain.jpeg') }}" alt="Multiple Sclerosis">
+            <figcaption>Multiple Sclerosis</figcaption>
+        </a>
+    </figure>
+
+    <!-- Add more figures as needed -->
+
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

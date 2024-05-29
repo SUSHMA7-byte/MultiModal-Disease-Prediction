@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <style>  
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');  
+      *{  
+        margin: 0;  
+        padding: 0;  
+        box-sizing: border-box;  
+        font-family: 'Montserrat', sans-serif;  
+        color:black;  
+      }  
+      body{  
+        background: url("https://nutrition4kids.com/wp-content/uploads/2020/05/32387698_m.jpg") no-repeat top center;  
+        padding: 0 10px;  
+        background-size: cover;  
+      }  
+      .wrapper{  
+        max-width: 500px;  
+        width: 100%;  
+        background: rgba(34, 126, 197, 0.7);  
+        margin: 20px auto;  
+        padding: 30px;  
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, 1.25);  
+      }  
+      .wrapper .title{  
+        font-size: 24px;  
+        font-weight: 700;  
+        margin-bottom: 25px;  
+        color: #fec107;  
+        text-transform: uppercase;  
+        text-align: center;  
+      }  
+      .wrapper .form{  
+        width: 100%;  
+      }  
+      .wrapper .form .input_field{  
+        margin-bottom: 15px;  
+        display: flex;  
+        align-items: center;  
+      }  
+      .wrapper .form .input_field label{  
+        width:80px;  
+        font: bold;  
+        color: wheat;  
+        margin-right: 10px;  
+        font-size: 14px;  
+      }  
+      .wrapper .form .input_field input{  
+        width: 100px;  
+      }  
+      .wrapper .form .input_field .textarea{  
+        resize: none;  
+        height: 250px;  
+        width: 500px;  
+      }  
+      </style>  
+     
+    
+
+</head>
+<body>
+    
+    <form method="post" action="/make_prediction1">
+        <!-- Add input fields for features -->
+        <div class="wrapper">  
+            <div class="title">  
+              <h1 style="color: white;">Diabetes Prediction</h1>  
+            </div>  
+            <div class="form">  
+              <div class="input_field">  
+                <textarea style="color: white; background: rgba(0, 0, 0, 0.3);" class="textarea" readonly>  
+        It's a clean, easy to understand set of data. However, the meaning of some of the column headers are not obvious. Here's what they mean,  
+        
+        Several constraints were placed on the selection of these instances from a larger database. In particular, all patients here are females at least 21 years old of Pima Indian heritage.
+
+                Pregnancies: Number of times pregnant
+                
+                Glucose: Plasma glucose concentration a 2 hours
+                        in an oral glucose tolerance test
+                
+                BloodPressure: Diastolic blood pressure (mm Hg)
+                
+                SkinThickness: Triceps skin fold thickness (mm)
+                
+                Insulin: 2-Hour serum insulin (mu U/ml)
+                
+                BMI: Body mass index (weight in kg/(height in m)^2)
+                
+                DiabetesPedigreeFunction: Diabetes pedigree 
+                                              function
+                
+                Age: Age (years)
+                
+                Outcome: Class variable (0 or 1) 
+                  </textarea>  
+               </div>  
+              <div class="input_field">  
+                <label>Total Number Of Pregnancies</label>  
+                <input type="number" id="age" min="0" max="50" name="age" class="input_text">  
+                <br/>  <i style="font-size: 10px; color: white;"> (No. Of Pregnancies)</i>  
+              </div>  
+              <div class="input_field">  
+                <label>Glucose</label>  
+                 <input type="number" name="sex" id="sex" class="input_text">  
+                 <br/>  <i style="font-size: 10px; color: white;"> (Enter Single Value From Range 0 - 200)</i>  
+               </div>  
+               <div class="input_field">  
+                <label>BloodPressure</label>  
+                 <input type="number" name="cp" id="cp"  class="input_text">  
+                 <br/>  <i style="font-size: 10px; color: white;">(Enter Single Value From Range 0-130)</i>  
+               </div>  
+               <div class="input_field">  
+                <label>SkinThickness</label>  
+                 <input name="trestbps" id="trestbps" type="number" class="input_text">  
+                 <br/>  <i style="font-size: 10px; color: white;">(Enter Single Value From Range 0-100)</i>  
+               </div>  
+               <div class="input_field">  
+                <label>Insulin</label>  
+                 <input name="chol" id="chol" type="number" class="input_text">  
+                 <br/>  <i style="font-size: 10px; color: white;">(Enter Single Value From Range 0 - 850 )</i>  
+               </div>  
+               <div class="input_field">  
+                <label>BMI</label>  
+                 <input type="number" name="fbs" id="fbs" class="input_text">  
+                 <br/>  <i style="font-size: 10px; color: white;">(Enter Single Value From Range 0 - 70)</i>  
+               </div>  
+               <div class="input_field">  
+                <label>DiabetesPedigreeFunction</label>  
+                 <input type="" name="restecg" id="restecg" class="input_text">  
+                 <br/>  <i style="font-size: 10px; color: white;">(Enter Single decimal Value From Range 0.000-2.000)</i>  
+               </div>  
+               <div class="input_field">  
+                <label>Age</label>  
+                 <input name="thalach" id="thalach" type="number" class="input_text">  
+                 <br/>  <i style="font-size: 10px; color: white;">(Enter Non-Decimal Value in years)</i>  
+               </div>  
+               
+               <div class="input_field">  
+                <input type="submit" style="color:black; background: skyblue;" id="submit" value="SUBMIT">  
+              </div>  
+              <div>  
+                <center>  
+                  <h2 style="color: white; margin-bottom:10px;">  
+                    {{prediction_text}}  
+                  </h2>  
+                </center>  
+              </div>  
+            </div>  
+          </div>  
+        </form>  
+        </body>  
+        </html>  
+
+
+
+
+
+
+
+
+

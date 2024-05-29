@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prediction</title>
+    <style>
+        body {
+            background-image: url('./static/bg1.jpg');            
+            background-position: center;  
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #fff;
+            background: linear-gradient(45deg, #003366, #66ccff);
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+
+        h1:hover {
+            color: #00eeff;
+            transform: scale(1.1);
+        }
+
+        .disease-card {
+            border-radius: 10px;
+            margin: 20px auto; /* Center horizontally */
+            padding: 20px;
+            width: 80%; /* Adjust the width of the card */
+            max-width: 600px; /* Set maximum width */
+            box-sizing: border-box;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .disease-card:hover {
+            transform: scale(1.05);
+        }
+
+        .disease-image {
+            width: 600px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-left: 450px;
+        }
+
+        .disease-content {
+            margin-top: 0;
+        }
+
+        h2 {
+            color: #0f0101;
+            font-size: 1.5em;
+            margin-top:10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <h1> Multimodal Disease Prediction </h1>
+    <a href="{{ url_for('heart_disease') }}" class="disease-card">
+        <img class="disease-image" src="https://images.ctfassets.net/yixw23k2v6vo/6BezXYKnMqcG4LSEcWyXlt/b490656e99f34bc18999f3563470eae6/iStock-1156928054.jpg?w=802&fm=jpg&fit=thumb&q=65&fl=progressive" alt="Disease 2">
+        <div class="disease-content">
+            <h2>Heart Disease</h2>
+        </div>
+    </a>
+    <a href="{{ url_for('liver_disease') }}" class="disease-card">
+        <img class="disease-image" src="./static/liver1.jpg" alt="Disease 3">
+        <div class="disease-content">
+            <h2>Liver Disease</h2>
+        </div>
+    </a>
+    <a href="{{ url_for('stroke_disease') }}" class="disease-card">
+        <img class="disease-image" src="./static/brain_stroke.jpeg" alt="Disease 4">
+        <div class="disease-content">
+            <h2>Brain stroke</h2>
+        </div>
+    </a>
+    <a href="{{ url_for('copd_disease') }}" class="disease-card">
+        <img class="disease-image" src="./static/copd1.jpg" alt="Disease 5">
+        <div class="disease-content">
+            <h2>Obstructive Pulmonary Disease</h2>
+        </div>
+    </a>
+    <a href="{{ url_for('thyroid_disease') }}" class="disease-card">
+        <img class="disease-image" src="./static/thy.jpg" alt="Disease 6">
+        <div class="disease-content">
+            <h2>Thyroid Disease</h2>
+        </div>
+    </a>
+    <a href="{{ url_for('diabetes') }}" class="disease-card">
+        <img class="disease-image" src="https://www.hearthsideseniorliving.com/wp-content/uploads/2021/05/Blue-background-produce-on-bottom-blocks-spelling-out-DIABETES-stethoscope-and-blood-sugar-meter.jpg" alt="Disease 7">
+        <div class="disease-content">
+            <h2>Diabetes</h2>
+        </div>
+    </a>
+</body>
+</html>
