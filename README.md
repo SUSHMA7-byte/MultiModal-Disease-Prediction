@@ -21,11 +21,17 @@ Our goal is to develop a sophisticated disease prediction system that leverages 
 
 ## Tools & Technologies Used 
 SAM (Spatial Attention Module)
+
 YOLO (You Only Look Once)
+
 Machine Learning (ML)
+
 Deep Learning (DL)
+
 Jupyter Notebook
+
 Flask
+
 Visual Studio Code
 
 ## Output
